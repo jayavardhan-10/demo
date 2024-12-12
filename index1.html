@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random HTML Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Simple Webpage</h1>
-    <p id="text">Click the button to change this text!</p>
-    <button onclick="document.getElementById('text').innerText = 'Text has been changed!'">Change Text</button>
+    <h1>Interactive Webpage</h1>
+    <p id="text">Click the button to change the background color!</p>
+    <button onclick="document.body.style.backgroundColor = 'lightblue'">Change Background</button>
 </body>
 </html>
