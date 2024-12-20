@@ -24,11 +24,18 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- Added Spring Boot Starter dependency -->
+    <!-- Spring Boot Starter -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
       <version>3.1.2</version>
+    </dependency>
+    <!-- Added Lombok Dependency -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
@@ -76,7 +83,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-        <!-- Added Spring Boot Maven Plugin -->
+        <!-- Spring Boot Maven Plugin -->
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
