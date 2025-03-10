@@ -2,12 +2,25 @@
 <body>
     <button onclick="document.body.style.backgroundColor='lightgray'">Click Here</button>
     <br>
-    <button
- onclick="document.body.style.backgroundColor='lightgray'">Click Here twice</button>
+    <button onclick="document.body.style.backgroundColor='lightgray'">Click Here twice</button>
     <br>
-    <button
- onclick="document.body.style.backgroundColor='blue'">Make it Blue</button>
+    <button onclick="document.body.style.backgroundColor='blue'">Make it Blue</button>
+    <br>
+    <button onclick="document.body.style.backgroundColor='green'">Make it Green</button>
+    <br>
+    <button onclick="document.body.style.backgroundColor='yellow'">Make it Yellow</button>
+    <br>
+    <button onclick="document.body.style.backgroundColor='white'">Reset Color</button>
     <h1>This is great</h1>
     <p>Welcome to the demo page. Enjoy experimenting with colors!</p>
+    <input type="text" id="headingInput" placeholder="Enter new heading text">
+    <button onclick="changeHeading()">Change Heading</button>
+
+    <script>
+        function changeHeading() {
+            var newText = document.getElementById('headingInput').value;
+            document.querySelector('h1').innerText = newText;
+        }
+    </script>
 </body>
 </html>
