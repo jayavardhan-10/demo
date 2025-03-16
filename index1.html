@@ -15,7 +15,12 @@
     <p>Welcome to the demo page. Enjoy experimenting with colors!</p>
     <input type="text" id="headingInput" placeholder="Enter new heading text">
     <button onclick="changeHeading()">Change Heading</button>
-
+    <script>
+        function changeHeading() {
+            var newText = document.getElementById('headingInput').value;
+            document.querySelector('h1').innerText = newText;
+        }
+    </script>
     
 </body>
 </html>
