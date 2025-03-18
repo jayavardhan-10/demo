@@ -11,8 +11,8 @@
     <button onclick="document.body.style.backgroundColor='yellow'">Make it Yellow</button>
     <br>
     <button onclick="document.body.style.backgroundColor='white'">Reset Color</button>
-    <h1>This is great</h1>
-    <p>Welcome to the demo page. Enjoy experimenting with colors!</p>
+    <h1 id="mainHeading">This is great</h1>
+    <p id="mainParagraph">Welcome to the demo page. Enjoy experimenting with colors!</p>
     <input type="text" id="headingInput" placeholder="Enter new heading text">
     <button onclick="changeHeading()">Change Heading</button>
     <br>
@@ -25,6 +25,10 @@
     </select>
     <br>
     <button onclick="changeTextColor()">Change Text Color</button>
+    <br>
+    <button onclick="toggleParagraph()">Toggle Paragraph</button>
+    <br>
+    <button onclick="resetHeading()">Reset Heading</button>
     <script>
         function changeHeading() {
             var newText = document.getElementById('headingInput').value;
@@ -40,6 +44,19 @@
             var colors = ['red', 'blue', 'green', 'purple', 'orange'];
             var randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.querySelector('h1').style.color = randomColor;
+        }
+
+        function toggleParagraph() {
+            var paragraph = document.getElementById('mainParagraph');
+            if (paragraph.style.display === 'none') {
+                paragraph.style.display = 'block';
+            } else {
+                paragraph.style.display = 'none';
+            }
+        }
+
+        function resetHeading() {
+            document.querySelector('h1').innerText = 'This is great';
         }
     </script>
 </body>
