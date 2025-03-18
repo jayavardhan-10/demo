@@ -1,38 +1,4 @@
-<html>
-<body>
-    <button onclick="document.body.style.backgroundColor='lightgray'">Click Here</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='lightgray'">Click Here twice</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='blue'">Make it Blue</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='green'">Make it Green</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='yellow'">Make it Yellow</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='white'">Reset Color</button>
-    <h1 id="mainHeading">This is great</h1>
-    <p id="mainParagraph">Welcome to the demo page. Enjoy experimenting with colors!</p>
-    <input type="text" id="headingInput" placeholder="Enter new heading text">
-    <button onclick="changeHeading()">Change Heading</button>
-    <br>
-    <select id="colorSelect" onchange="changeBackgroundColor()">
-        <option value="white">Select Background Color</option>
-        <option value="lightgray">Light Gray</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-    </select>
-    <br>
-    <button onclick="changeTextColor()">Change Text Color</button>
-    <br>
-    <button onclick="toggleParagraph()">Toggle Paragraph</button>
-    <br>
-    <button onclick="resetHeading()">Reset Heading</button>
-    <script>
-        function changeHeading() {
-            var newText = document.getElementById('headingInput').value;
-            document.querySelector('h1').innerText = newText;
+< document.querySelector('h1').innerText = newText;
         }
 
         function changeBackgroundColor() {
