@@ -48,4 +48,11 @@ public class App
   System.out.println("Goodbye, " + name + "!");
                     break;
                 default:
-                   
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}                  
