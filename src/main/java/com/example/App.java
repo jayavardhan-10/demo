@@ -45,14 +45,4 @@ public class App
                     System.out.println("The sum is: " + (num1 + num2));
                     break;
                 case 3:
-                    System.out.println("Goodbye, " + name + "!");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
-        }
-
-        // Close the scanner
-        scanner.close();
-    }
-}
+                    
