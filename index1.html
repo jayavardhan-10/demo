@@ -1,89 +1,85 @@
-< document.querySelector('h1').innerText = newText;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Quiz App</h1>
+    <p id="question">Welcome to the quiz! Click "Start Quiz" to begin.</p>
+    <button onclick="startQuiz()">Start Quiz</button>
+    <div id="quiz" class="hidden">
+        <p id="question"></p>
+        <input type="radio" name="answer" value="0" id="option0">
+        <label for="option0" id="label0"></label><br>
+        <input type="radio" name="answer" value="1" id="option1">
+        <label for="option1" id="label1"></label><br>
+        <input type="radio" name="answer" value="2" id="option2">
+        <label for="option2" id="label2"></label><br>
+        <input type="radio" name="answer" value="3" id="option3">
+        <label for="option3" id="label3"></label><br>
+        <button onclick="checkAnswer()">Submit Answer</button>
+    </div>
+    <p id="result" class="hidden"></p>
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Rome"],
+                correct: 2
+            },
+            {
+                question: "What is 2 + 2?",
+                options: ["3", "4", "5", "6"],
+                correct: 1
+            },
+            {
+                question: "What is the largest planet in our solar system?",
+                options: ["Earth", "Jupiter", "Mars", "Saturn"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+            showQuestion();
         }
 
-        function changeBackgroundColor() {
-            var selectedColor = document.getElementById('colorSelect').value;
-            document.body.style.backgroundColor = selectedColor;
-        }
-        
-        function changeTextColor() {
-            var colors = ['red', 'blue', 'green', 'purple', 'orange'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelector('h1').style.color = randomColor;
-        }
-  function changeTextColor() {
-            var colors = ['red', 'blue', 'green', 'purple', 'orange'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelector('h1').style.color = randomColor;
-        }
-
-function changeTextColor() {
-            var colors = ['red', 'blue', 'green', 'purple', 'orange'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelector('h1').style.color = randomColor;
-        }
-
-
-        function toggleParagraph() {
-            var paragraph = document.getElementById('mainParagraph');
-            if (paragraph.style.display === 'none') {
-                paragraph.style.display = 'block';
-            } else {
-                paragraph.style.display = 'none';
+        function showQuestion() {
+            document.getElementById('question').innerText = questions[currentQuestion].question;
+            for (let i = 0; i < 4; i++) {
+                document.getElementById('option' + i).checked = false;
+                document.getElementById('label' + i).innerText = questions[currentQuestion].options[i];
             }
         }
 
-        function resetHeading() {
-            document.querySelector('h1').innerText = 'This is great';
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+            if (selectedOption && parseInt(selectedOption.value) === questions[currentQuestion].correct) {
+                document.getElementById('result').innerText = "Correct!";
+            } else {
+                document.getElementById('result').innerText = "Wrong!";
+            }
+            document.getElementById('result').classList.remove('hidden');
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                setTimeout(showQuestion, 2000);
+            } else {
+                setTimeout(endQuiz, 2000);
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('question').innerText = "Quiz Over! Refresh the page to play again.";
         }
     </script>
 </body>
 </html>
-
-
-<html>
-<body>
-    <button onclick="document.body.style.backgroundColor='lightgray'">Click Here</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='lightgray'">Click Here twice</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='blue'">Make it Blue</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='green'">Make it Green</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='yellow'">Make it Yellow</button>
-    <br>
-    <button onclick="document.body.style.backgroundColor='white'">Reset Color</button>
-    <h1 id="mainHeading">This is great</h1>
-    <p id="mainParagraph">Welcome to the demo page. Enjoy experimenting with colors!</p>
-    <input type="text" id="headingInput" placeholder="Enter new heading text">
-    <button onclick="changeHeading()">Change Heading</button>
-    <br>
-    <select id="colorSelect" onchange="changeBackgroundColor()">
-        <option value="white">Select Background Color</option>
-        <option value="lightgray">Light Gray</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-    </select>
-    <br>
-    <button onclick="changeTextColor()">Change Text Color</button>
-    <br>
-    <button onclick="toggleParagraph()">Toggle Paragraph</button>
-    <br>
-    <button onclick="resetHeading()">Reset Heading</button>
-    <script>
-        function changeHeading() {
-            var newText = document.getElementById('headingInput').value;
-            document.querySelector('h1').innerText = newText;
-        }
-
-        function changeBackgroundColor() {
-            var selectedColor = document.getElementById('colorSelect').value;
-            document.body.style.backgroundColor = selectedColor;
-        }
-        
-        function changeTextColor() {
-            var colors = ['red', 'blue', 'green', 'purple', 'orange'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            = 
