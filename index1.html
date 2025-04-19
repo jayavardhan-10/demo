@@ -25,6 +25,7 @@
         <button onclick="checkAnswer()">Submit Answer</button>
     </div>
     <p id="result" class="hidden"></p>
+    <p id="score" class="hidden">Score: 0</p>
     <script>
         const questions = [
             {
@@ -45,10 +46,14 @@
         ];
 
         let currentQuestion = 0;
+        let score = 0;
 
         function startQuiz() {
             document.getElementById('quiz').classList.remove('hidden');
             document.getElementById('result').classList.add('hidden');
+            document.getElementById('score').classList.add('hidden');
+            score = 0; // Reset score at the start
+            updateScore();
             showQuestion();
         }
 
@@ -64,6 +69,8 @@
             const selectedOption = document.querySelector('input[name="answer"]:checked');
             if (selectedOption && parseInt(selectedOption.value) === questions[currentQuestion].correct) {
                 document.getElementById('result').innerText = "Correct!";
+                score++; // Increment score for correct answer
+                updateScore();
             } else {
                 document.getElementById('result').innerText = "Wrong!";
             }
@@ -76,19 +83,15 @@
             }
         }
 
->
-        function endQuiz() {
-            document.getElementById('quiz').classList.add('hidden');
-            document.getElementById('question').innerText = "Quiz Over! Refresh the page to play again.";
+        function updateScore() {
+            document.getElementById('score').innerText = "Score: " + score;
+            document.getElementById('score').classList.remove('hidden');
         }
-    </script>
-</body>
-</html
 
         function endQuiz() {
             document.getElementById('quiz').classList.add('hidden');
-            document.getElementById('question').innerText = "Quiz Over! Refresh the page to play again.";
+            document.getElementById('question').innerText = "Quiz Over! Your final score is: " + score + ". Refresh the page to play again.";
         }
     </script>
 </body>
-</html
+</html>
