@@ -96,3 +96,19 @@
     </script>
 </body>
 </html>
+
+
+
+
+        function updateScore() {
+            document.getElementById('score').innerText = "Score: " + score;
+            document.getElementById('score').classList.remove('hidden');
+        }
+
+        function endQuiz() {
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('question').innerText = "Quiz Over! Your final score is: " + score + ". Refresh the page to play again.";
+        }
+    </script>
+</body>
+</html>
