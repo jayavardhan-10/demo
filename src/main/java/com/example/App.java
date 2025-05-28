@@ -15,6 +15,7 @@ public class App
         // Ask the user for their name with validation
         while (name.isEmpty()) {
             System.out.println("Enter your name: ");
+
             name = scanner.nextLine().trim();
             if (name.isEmpty()) {
                 System.out.println("Name cannot be empty. Please try again.");
