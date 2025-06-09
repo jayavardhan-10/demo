@@ -2,23 +2,12 @@
 <html>
 <head>
     <title>Quiz App</title>
-    
     <style>
-
-
-
-        
-        
-    sdjlfasdjklf
-
         .hidden {
             display: none;
         }
     </style>
 </head>
-
-
-    
 <body>
     <h1>Simple Quiz App</h1>
     <p id="question">Welcome to the quiz! Click "Start Quiz" to begin.</p>
@@ -53,6 +42,11 @@
                 question: "What is the largest planet in our solar system?",
                 options: ["Earth", "Jupiter", "Mars", "Saturn"],
                 correct: 1
+            },
+            {
+                question: "Which language is primarily used for web development?",
+                options: ["Python", "Java", "C++", "HTML"],
+                correct: 3
             }
         ];
 
@@ -60,10 +54,11 @@
         let score = 0;
 
         function startQuiz() {
+            currentQuestion = 0;
+            score = 0; // Reset score at the start
             document.getElementById('quiz').classList.remove('hidden');
             document.getElementById('result').classList.add('hidden');
             document.getElementById('score').classList.add('hidden');
-            score = 0; // Reset score at the start
             updateScore();
             showQuestion();
         }
@@ -80,7 +75,7 @@
             const selectedOption = document.querySelector('input[name="answer"]:checked');
             if (selectedOption && parseInt(selectedOption.value) === questions[currentQuestion].correct) {
                 document.getElementById('result').innerText = "Correct!";
-                score++; // Increment score for correct answer
+                score++;
                 updateScore();
             } else {
                 document.getElementById('result').innerText = "Wrong!";
@@ -105,3 +100,4 @@
         }
     </script>
 </body>
+</html>
